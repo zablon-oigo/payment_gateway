@@ -5,8 +5,6 @@ from sqlalchemy.orm import as_declarative
 
 @as_declarative()
 class Base:
-    __name__: str
-
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()), unique=True, nullable=False)
 
     @declared_attr
